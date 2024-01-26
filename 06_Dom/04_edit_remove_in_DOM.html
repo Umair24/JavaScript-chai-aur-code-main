@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom in Javascript</title>
+</head>
+<body style="background-color: black; color: white;">
+    <ol class="language">
+        <li>Javascript</li>
+    </ol>
+</body>
+<script>
+    // this function add list in existing list
+    // this method are complex 
+     function addLanguage(langName){
+        let li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+     }
+     addLanguage("java")
+     addLanguage("c++")
+
+
+    //  for practice
+    //  function addLanguage(langName){
+    //     let li = document.createElement('li')
+    //     li.innerHTML = `${langName}`
+    //     document.querySelector(`.language`).appendChild(li)
+    //  }
+    //  addLanguage("Ruby")
+
+
+    // this is an optimize way to declare a function
+    function addOptiLanguage(langName){
+        let li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage('golang')
+
+
+
+    // Edit the value
+    let secondLang = document.querySelector("li:nth-child(2)")
+    // editLang.innerHTML = "JS"   we can also edit an element like this way
+    let newli = document.createElement('li')
+    newli.textContent = "mojo"
+    editLang.replaceWith(newli)
+
+
+    // edit
+    let firstLang = document.querySelector("li:nth-child(2)")
+    firstLang.outerHTML = '<li>Typescript</li>'
+
+
+    // remove
+    let lastLang = document.querySelector("li:last-child")
+    lastLang.remove()
+// </script>
+</html>
