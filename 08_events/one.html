@@ -18,4 +18,51 @@
         </ul>
     </div>
 </body>
+<script>
+    
+    // document.getElementById('owl').onclick = function(){
+    //     alert('owl clicked!')
+    // }    //this is first approach and this is an old approach to display a alert msg
+
+
+    // document.etElementById('owl').addEventListener('click', function(event){
+    //     console.log(event);
+    // }, true)  //this approach are latest approach
+
+
+    // some important events
+    // type, timestamp, defaultPrevented, target, toElement, srcElement
+    // currentTarget, clientX, clientY, ScreenX, ScreenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    // document.getElementById('Images').addEventListener('click', function(event){
+    //     console.log("Clicked inside the ul!");
+    // }, false)
+
+    // in "false" the bubbling are take place
+    // in "true" the Capturing are take place
+
+    // document.getElementById('owl').addEventListener('click', function(event){
+    //     console.log("Owl clicked!");
+    //     event.stopPropagation()
+    // }, false)
+
+
+    // document.getElementById('google').addEventListener('click', function(event){
+    //     console.log("Google Clicked!");
+    //     event.stopPropagation()
+    //     event.preventDefault();
+    // })
+
+
+    document.querySelector('#Images').addEventListener('click', function(event){
+        console.log(event.target.tagName);
+        if(event.target.tagName === 'IMG'){
+            let removeIt = event.target.parentNode
+            removeIt.remove()   //first approach
+            // removeIt.parentNode.removeChild(removeIt)   // second approach
+        }
+           
+    })
+</script>
 </html>
