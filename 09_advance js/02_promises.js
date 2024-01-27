@@ -25,5 +25,5 @@ new Promise(function(resolve, reject){
 
 
 let promisThree = new Promise(function(resolve, reject){
-    
+    setTimeout
 })
